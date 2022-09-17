@@ -8,8 +8,12 @@
     <title>SGC-Almoxarifado</title>
 </head>
 <body>
+  <button id="btnLogin">login</button>
+  <h1>SGC - Almoxarifado</h1>
 <div id="firebaseui-auth-container"></div>
-<button id="btnLogin">login</button>
+
+<div id="site"></div>
+
 
 
 
@@ -44,9 +48,9 @@ function startUI(){
         requireDisplayName: true
       },
       firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-      firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-      firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-      firebase.auth.GithubAuthProvider.PROVIDER_ID
+      // firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+      // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+      // firebase.auth.GithubAuthProvider.PROVIDER_ID
     ],
     // Other config options...
   });
