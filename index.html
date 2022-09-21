@@ -91,6 +91,10 @@ firebase.auth().onAuthStateChanged((user) => {
     console.log("email: ", email)
     console.log("photoURL: ", photoURL)
     console.log("emailVerified: ", emailVerified)
+
+    document.write(`Olá  ${displayName}` )
+    document.write(`<img src='${photoURL}'>`)
+    document.write(`<p> ${email} </p>`)
     // ...
   } else {
     // User is signed out
