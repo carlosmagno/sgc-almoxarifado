@@ -83,6 +83,14 @@ firebase.auth().onAuthStateChanged((user) => {
     // https://firebase.google.com/docs/reference/js/firebase.User
     var uid = user.uid;
     console.log("usuario logado: ", uid)
+    const displayName = user.displayName;
+    const email = user.email;
+    const photoURL = user.photoURL;
+    const emailVerified = user.emailVerified;
+    console.log("displayName: ", displayName)
+    console.log("email: ", email)
+    console.log("photoURL: ", photoURL)
+    console.log("emailVerified: ", emailVerified)
     // ...
   } else {
     // User is signed out
