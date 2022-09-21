@@ -13,6 +13,20 @@
 <div id="firebaseui-auth-container"></div>
 <!-- <div id="loader">loading...</div> -->
 
+<div id="config-inicial">
+  <h2>Configurações iniciais</h2>
+  <select name="tipo" id="tipo">
+    <option value="">Selecione uma opção</option>
+    <option value="useradmin">Sou o administrador da minha organização</option>
+    <option value="userfinal">Sou usuário final</option>
+  </select>
+  <button disabled>Avançar</button>
+  <br>
+  <input type="text" name="setcodorganizacao" id="setcodorganizacao" placeholder="Código da organização"> <button disabled>Avançar</button>
+  <br>
+  <input type="text" name="setnomeorganizacao" id="setnomeorganizacao" placeholder="Nome da organização"> <button disabled>Avançar</button>
+</div>
+
 <div id="site"></div>
 
 
@@ -95,11 +109,20 @@ firebase.auth().onAuthStateChanged((user) => {
     document.write(`Olá  ${displayName}` )
     document.write(`<img src='${photoURL}'>`)
     document.write(`<p> ${email} </p>`)
-    // ...
+    // Se usuário está logado 
+    // Grava informação dele na coleção "usuariosonline"
+
+
+    //Se o campo "codorganizacao" do cadastro do usuário está vazio exibe div para informar a Organizacao, se vai criar um novo site como admin. Ao criar grava o campo "tipo" como "admin", e retorna o id automático do documento e grava no campo "codorganizacao". Exibe os campos para cadastrar 3 emails que serão dos usuários finais.
+    
+    //Ou se for usuário final, inserir o código da organização, que vai buscar na coleção sites por esse código do documento
+
   } else {
     // User is signed out
     // ...
     console.log("usuário desconectado")
+    // Se usuário deslogou 
+    // Deleta a informação dele na coleção "usuariosonline"
   }
 });
 
